@@ -23,4 +23,7 @@ yarn-debug.log*
 yarn-error.log*
 .firebaserc
 firebaseConfig.tsx
-.firebaserc
+/.firebase
+firebase-debug.log
+*.cache
+*.cache
