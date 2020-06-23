@@ -10,7 +10,7 @@ import {
 } from 'recoil';
 import { accountState } from '../recoil/atoms';
 import * as _ from 'lodash';
-import { firebaseConfig } from '../../firebaseConfig'
+import { firebaseConfig } from '../firebaseConfig'
 if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
 }
