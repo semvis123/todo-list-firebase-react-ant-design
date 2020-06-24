@@ -28,3 +28,5 @@ firebase-debug.log
 *.cache
 *.cache
 .firebase/hosting.YnVpbGQ.cache
+*.cache
+.firebaserc
