@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import { Layout } from 'antd';
 import {
@@ -22,8 +22,10 @@ const { Content, Footer } = Layout;
 
 function App() {
   let [account, setAccount] = useRecoilState(accountState);
-  AutoLogin(account, setAccount);
-  return (
+  useEffect(()=>{
+    AutoLogin(account, setAccount);
+  });
+    return (
     <div className="App">
       <Router>
         <Layout style={{ minHeight: '100vh' }}>

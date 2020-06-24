@@ -1,10 +1,5 @@
-import * as firebase from 'firebase';
-import { firebaseConfig } from '../firebaseConfig';
+import { firebase } from '../firebaseConfig';
 export default function AutoLogin(account, setAccount) {
-    if (!firebase.apps.length) {
-        firebase.initializeApp(firebaseConfig);
-    }
-
     if (!account.uid) {
         firebase.auth().onAuthStateChanged(function (user) {
             if (user) {

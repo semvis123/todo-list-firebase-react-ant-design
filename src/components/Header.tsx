@@ -15,15 +15,19 @@ function Header() {
     let history = useHistory();
     let account = useRecoilValue(accountState);
     const changePage = (e) => {
-        // console.log(e);
-        history.push(e.key);
+        const IgnoreButtons = ['logo'];
+        if (!IgnoreButtons.includes(e.key)) {
+            history.push(e.key);
+        }
     }
     let location = useLocation();
 
     return (
         <Layout.Header className="site-layout-header" >
-            <div className="logo"><p className="logo-text">TODO-List</p></div>
             <Menu theme="dark" defaultSelectedKeys={[location.pathname]} selectedKeys={[location.pathname]} mode="horizontal" onSelect={changePage} >
+                <Menu.Item key="logo" style={{ float: 'left' }} onSelect={(e) => { e.preventDefault() }} onClick={(e) => { e.domEvent.preventDefault() }}>
+                    <div className="logo"><p className="logo-text">TODO-List</p></div>
+                </Menu.Item>
                 <Menu.Item key="/" icon={<HomeOutlined />} style={{ float: 'left' }}>
                     Home
                 </Menu.Item>

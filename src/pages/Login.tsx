@@ -3,24 +3,19 @@ import Title from 'antd/lib/typography/Title';
 import { Redirect } from 'react-router-dom';
 import Texty from 'rc-texty';
 import 'rc-texty/assets/index.css';
-import * as firebase from 'firebase';
 import * as firebaseui from 'firebaseui';
 import 'firebaseui/';
 import {
     useRecoilState,
 } from 'recoil';
 import { accountState } from '../recoil/atoms';
-import * as _ from 'lodash';
-import { firebaseConfig } from '../firebaseConfig';
-if (!firebase.apps.length) {
-    firebase.initializeApp(firebaseConfig);
-}
+import { firebase } from '../firebaseConfig';
 
 export default function Login(props) {
     const [account, setAccount] = useRecoilState(accountState);
     // console.log('rendered');
     useEffect(() => {
-        if (account.uid == undefined) {
+        if (account.uid === undefined) {
             // Initialize the FirebaseUI Widget using Firebase.
             var ui = firebaseui.auth.AuthUI.getInstance() || new firebaseui.auth.AuthUI(firebase.auth());
             firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
@@ -66,7 +61,7 @@ export default function Login(props) {
             };
             ui.start('#firebaseui-auth-container', uiConfig);
         }
-    }, []);
+    });
 
     return (
         <>
