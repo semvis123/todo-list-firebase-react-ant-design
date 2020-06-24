@@ -9,6 +9,7 @@ import {
 import Home from './pages/Home';
 import Header from './components/Header';
 import Login from './pages/Login';
+import Settings from './pages/Settings';
 import Logout from './pages/Logout';
 import { accountState } from './recoil/atoms';
 import {
@@ -24,7 +25,7 @@ function App() {
   let [account, setAccount] = useRecoilState(accountState);
   useEffect(()=>{
     AutoLogin(account, setAccount);
-  });
+  },[]);
     return (
     <div className="App">
       <Router>
@@ -38,6 +39,9 @@ function App() {
                 </Route>
                 <Route exact path="/Logout">
                   <Logout />
+                </Route>
+                <Route exact path="/Settings">
+                  <Settings />
                 </Route>
                 <Route exact path="/">
                   <Home />

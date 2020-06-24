@@ -18,10 +18,10 @@ export default function Login(props) {
         if (account.uid === undefined) {
             // Initialize the FirebaseUI Widget using Firebase.
             var ui = firebaseui.auth.AuthUI.getInstance() || new firebaseui.auth.AuthUI(firebase.auth());
-            firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
             var uiConfig = {
                 callbacks: {
                     signInSuccessWithAuthResult: function (authResult, redirectUrl) {
+                        console.log(authResult, redirectUrl);
                         // User successfully signed in.
                         // Return type determines whether we continue the redirect automatically
                         // or whether we leave that to developer to handle.
@@ -42,6 +42,7 @@ export default function Login(props) {
                         document.getElementById('loader').style.display = 'none';
                     }
                 },
+                signInFlow: 'popup',
                 // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
                 signInOptions: [
                     {
@@ -57,7 +58,6 @@ export default function Login(props) {
                         }
                     },
                 ],
-                credentialHelper: firebaseui.auth.CredentialHelper.GOOGLE_YOLO
             };
             ui.start('#firebaseui-auth-container', uiConfig);
         }

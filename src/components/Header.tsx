@@ -4,6 +4,7 @@ import {
     LoginOutlined,
     HomeOutlined,
     LogoutOutlined,
+    SettingOutlined
 } from '@ant-design/icons';
 import { useLocation, useHistory } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
@@ -31,13 +32,12 @@ function Header() {
                 <Menu.Item key="/" icon={<HomeOutlined />} style={{ float: 'left' }}>
                     Home
                 </Menu.Item>
+                <Menu.Item key="/settings" icon={<SettingOutlined />} style={{ float: 'right' }} >Settings</Menu.Item>
                 {account.uid ? <Menu.Item key="/logout" icon={<LogoutOutlined />} style={{ float: 'right' }} >
                     Logout
-                </Menu.Item> :
-                    <Menu.Item key="/login" icon={<LoginOutlined />} style={{ float: 'right' }} >
+                </Menu.Item> : <Menu.Item key="/login" icon={<LoginOutlined />} style={{ float: 'right' }} >
                         Login
-                </Menu.Item>
-                }
+                </Menu.Item>}
             </Menu>
         </Layout.Header>
     );
