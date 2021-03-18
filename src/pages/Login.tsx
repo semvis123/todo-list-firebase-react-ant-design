@@ -50,6 +50,9 @@ export default function Login(props) {
                         requireDisplayName: true
                     },
                     {
+                        provider: firebase.auth.GithubAuthProvider.PROVIDER_ID,
+                    },
+                    {
                         provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
                         customParameters: {
                             // Forces account selection even when one account

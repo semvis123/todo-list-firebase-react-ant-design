@@ -49,7 +49,7 @@ function App() {
               </Switch>
             </div>
           </Content>
-          <Footer style={{ textAlign: 'center' }}>©2020 Created by semvis123</Footer>
+          <Footer style={{ textAlign: 'center' }}>©2021 Created by semvis123</Footer>
         </Layout>
       </Router>
     </div>
