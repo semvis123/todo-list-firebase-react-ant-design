@@ -15,7 +15,7 @@
     "axios": "^0.21.1",
     "firebase": "^7.15.1",
     "firebaseui": "^4.5.1",
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.21",
     "rc-queue-anim": "^1.8.5",
     "rc-texty": "^0.2.0",
     "react": "^16.13.1",
